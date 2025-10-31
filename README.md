@@ -3,35 +3,21 @@
 #### 介绍
 基于Python SDK MCP天气 Server开发
 
-#### 软件架构
-软件架构说明
+1、技术环境
+■ Python 3.10或更高版本；
+■ MCP Python SDK 1.6.0；
+■ 推荐使用uv管理Python项目；
+■ 如果需要，还可以创建PyPI账号，以发布Python包。
 
+2、业务流程
+（1）首先，用户向大模型提出天气查询请求，例如"北京今天天气如何？"。 
+（2）大模型分析用户的问题，判断需要使用天气工具来回答。 
+（3）大模型通过Client请求使用current_weather工具，并等待用户确认。 
+（4）用户确认工具调用后，Client将请求发送到我们的MCP天气服务器。 
+（5）MCP Server执行current_weather函数，向心知天气的Seniverse API发送请求，获取该地址的详细天气数据。 
+（6）MCP Server将API返回的原始数据格式化为结构化的天气信息。 
+（7）格式化后的天气数据通过Client返回给大模型。
+（8）大模型根据天气数据生成自然语言回答。
 
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+3、时序图
+![输入图片说明](%E6%96%B0%E5%AF%B9%E8%AF%9D.png)
